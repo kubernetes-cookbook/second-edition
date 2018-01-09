@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gitrepo
+spec:
+  containers:
+  - image: ubuntu
+    name: ubuntu
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - mountPath: /app
+      name: app-git
+  volumes:
+  - name: app-git
+    gitRepo:
+      repository: "https://github.com/kubernetes-cookbook/second-edition.git"
+      revision: "9d8e845e2f55a5c65da01ac4235da6d88ef6bcd0"

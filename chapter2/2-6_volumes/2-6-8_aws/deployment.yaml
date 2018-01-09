@@ -1,0 +1,23 @@
+kind: Deployment
+apiVersion: apps/v1beta1
+metadata:
+  name: aws-ebs-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: nginx
+    spec:
+      volumes:
+      - name: aws-ebs
+        persistentVolumeClaim:
+          claimName: aws-example
+      containers:
+      - name: aws-ebs-example
+        image: nginx
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: /mount-path
+            name: aws-ebs

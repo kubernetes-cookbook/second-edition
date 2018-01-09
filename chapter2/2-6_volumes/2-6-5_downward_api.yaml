@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: downwardapi
+  labels:
+    env: example
+spec:
+  containers:
+    -
+      name: downwardapi
+      image: ubuntu
+      command:
+        - sleep
+        - "3600"
+      volumeMounts:
+          - name: podinfo
+            mountPath: /data-mount
+  volumes:
+    - name: podinfo
+      downwardAPI:
+        items:
+          - path: metadata
+            fieldRef:
+              fieldPath: metadata.labels

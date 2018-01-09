@@ -1,0 +1,13 @@
+apiVersion: "v1"
+  kind: "PersistentVolume"
+  metadata:
+    name: "pvnfs01"
+  spec:
+    capacity:
+      storage: "3Gi"
+    accessModes:
+      - "ReadWriteOnce"
+    nfs:
+      path: "/"
+      server: "<your nfs server>"
+    persistentVolumeReclaimPolicy: "Recycle"

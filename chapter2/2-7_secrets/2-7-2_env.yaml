@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-example-env
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    command: ["/bin/sh", "-c", "while : ;do echo $ACCESS_TOKEN; sleep 10; done"]
+    env:
+        - name: ACCESS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: access-token
+              key: 2-7-1_access-token

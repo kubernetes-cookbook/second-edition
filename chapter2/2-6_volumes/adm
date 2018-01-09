@@ -1,0 +1,166 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://api.ds-hackday.net
+  name: ds-hackday.net
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.225.67.218
+  name: gke_devops-with-kubernetes_us-central1-a_cluster-1
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.184.53.170
+  name: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.188.246.64
+  name: gke_devops-with-kubernetes_us-east4-b_stable-1-7-cluster
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.188.241.97
+  name: gke_devops-with-kubernetes_us-east4-b_stable-cluster
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://api.k8s-devops.net
+  name: k8s-devops.net
+- cluster:
+    certificate-authority: /Users/chloelee/.minikube/ca.crt
+    server: https://192.168.99.100:8443
+  name: minikube
+contexts:
+- context:
+    cluster: k8s-devops.net
+    namespace: project1
+    user: hello
+  name: devops-context
+- context:
+    cluster: ds-hackday.net
+    user: ds-hackday.net
+  name: ds-hackday.net
+- context:
+    cluster: gke_devops-with-kubernetes_us-central1-a_cluster-1
+    user: gke_devops-with-kubernetes_us-central1-a_cluster-1
+  name: gke_devops-with-kubernetes_us-central1-a_cluster-1
+- context:
+    cluster: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+    user: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+  name: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+- context:
+    cluster: gke_devops-with-kubernetes_us-east4-b_stable-1-7-cluster
+    user: gke_devops-with-kubernetes_us-east4-b_stable-1-7-cluster
+  name: gke_devops-with-kubernetes_us-east4-b_stable-1-7-cluster
+- context:
+    cluster: gke_devops-with-kubernetes_us-east4-b_stable-cluster
+    user: gke_devops-with-kubernetes_us-east4-b_stable-cluster
+  name: gke_devops-with-kubernetes_us-east4-b_stable-cluster
+- context:
+    cluster: k8s-devops.net
+    user: k8s-devops.net
+  name: k8s-devops.net
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+- context:
+    cluster: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+    namespace: project1
+    user: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+  name: project1
+- context:
+    cluster: ""
+    user: ""
+  name: project2
+current-context: gke_devops-with-kubernetes_us-central1-a_cluster-1
+kind: Config
+preferences: {}
+users:
+- name: ds-hackday.net
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
+    password: VntiBA32rUsb7wW74MPhwRUtcXt3UhcH
+    username: admin
+- name: ds-hackday.net-basic-auth
+  user:
+    password: VntiBA32rUsb7wW74MPhwRUtcXt3UhcH
+    username: admin
+- name: gke_devops-with-kubernetes_us-central1-a_cluster-1
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl00BUyG0Zdo01DlvXh5w0lEg_5UnD5zxRpO4Msc5iMZyg7p6hYejnj715NAqTGUKuCKDu74fqvjoMNgBP5hHp5OUawOwKmY4CuMGpQKfQRA8lfnqofrMs09C3JGuxw
+        cmd-args: config config-helper --format=json
+        cmd-path: /Users/chloelee/Downloads/google-cloud-sdk/bin/gcloud
+        expiry: 2017-12-31T06:14:55Z
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_devops-with-kubernetes_us-central1-b_cluster-for-ci
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl24BGiKMvpFkpgfRHKhZ25X932juwJZwF5VKaPbiGGzOoYWTZ-TrL7zQKuLNE9ZvlKkoVYKBYbO9LAtlsGC5XzyyoxlhGaP5NMwDHkLYEvdtLThWP-Ik9-0tCwWUsg
+        cmd-args: config config-helper --format=json
+        cmd-path: /Users/chloelee/Downloads/google-cloud-sdk/bin/gcloud
+        expiry: 2017-08-31 01:01:59
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_devops-with-kubernetes_us-east4-b_stable-1-7-cluster
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl2VBEQcVJXLkoLyU_FGO3Ns0eLLqz-KmDY2Wp6nU3WEwriH56wX7cnIwmParufO6BEMP7Nvt6EAEqr_DQ1SK-Z5_76d-US4LulnxZo3J3qUcSdofjB7qmq4waIyLcQ
+        cmd-args: config config-helper --format=json
+        cmd-path: /Users/chloelee/Downloads/google-cloud-sdk/bin/gcloud
+        expiry: 2017-07-27 01:56:40
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_devops-with-kubernetes_us-east4-b_stable-cluster
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl2pBDg-qPQ_vR5TzQ9cxgkLcwJhmQVC-7b9oXMke7WB_2jMq1FrYX2ORxRrVhqyq6REXwIgxnfs4zyddSgrv_2VwJ9-Ko_05aVS1hJ3tan6kEiPujm-_yfw-QVxsZs
+        cmd-args: config config-helper --format=json
+        cmd-path: /Users/chloelee/Downloads/google-cloud-sdk/bin/gcloud
+        expiry: 2017-08-16 05:25:45
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: hello
+  user:
+    auth-provider:
+      config:
+        client-id: 61105234762-bfg45nq5hb7evdg6mge1sleq4ngof1ng.apps.googleusercontent.com
+        client-secret: ivwBH_Vfjni41lduGZq
+        id-token: ivwBH_Vfjni41lduGZq
+        idp-certificate-authority: /Users/chloelee/Documents/Kube/examples/chapter8/8-5_authorization/8-5-2_RBAC/ca.crt
+        idp-issuer-url: https://accounts.google.com/o/oauth2/auth
+      name: oidc
+- name: ivy
+  user:
+    token: 40j8-ivwBH_Vfjni41lduGZq
+- name: john
+  user:
+    client-certificate: /Users/chloelee/Documents/Kube/examples/chapter8/8-5_authorization/8-5-2_RBAC/john.crt
+    client-key: /Users/chloelee/Documents/Kube/examples/chapter8/8-5_authorization/8-5-2_RBAC/john.key
+- name: k8s-devops.net
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
+    password: IJzHfcyPJNTLwxYvVCNqqOEx9VxOv7Vy
+    username: admin
+- name: k8s-devops.net-basic-auth
+  user:
+    password: IJzHfcyPJNTLwxYvVCNqqOEx9VxOv7Vy
+    username: admin
+- name: linda
+  user:
+    client-certificate: /Users/chloelee/Documents/Kube/examples/chapter8/8-5_authorization/8-5-1_ABAC/linda.crt
+    client-key: /Users/chloelee/Documents/Kube/examples/chapter8/8-5_authorization/8-5-1_ABAC/linda.key
+- name: minikube
+  user:
+    client-certificate: /Users/chloelee/.minikube/client.crt
+    client-key: /Users/chloelee/.minikube/client.key

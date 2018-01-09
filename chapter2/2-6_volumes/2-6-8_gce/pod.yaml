@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: gce-pd-pod
+spec:
+  volumes:
+    - name: gce-pd
+      persistentVolumeClaim:
+       claimName: gce-example
+  containers:
+    - name: gce-pd-example
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - mountPath: /mount-path
+          name: gce-pd

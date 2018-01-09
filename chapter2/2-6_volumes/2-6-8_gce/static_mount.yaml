@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gce-pd-pod
+spec:
+  containers:
+  - image: nginx
+    name: gce-pd-example
+    ports:
+      - containerPort: 80
+    volumeMounts:
+    - mountPath: /mount-path
+      name: gce-pd
+  volumes:
+  - name: gce-pd
+    gcePersistentDisk:
+      pdName: example
+      fsType: ext4

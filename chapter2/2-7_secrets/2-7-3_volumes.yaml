@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-example-volume
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    command: ["/bin/sh", "-c", "while : ;do cat /secret/token; sleep 10; done"]
+    volumeMounts:
+      - name: secret-volume
+        mountPath: /secret
+        readOnly: true
+  volumes:
+    - name: secret-volume
+      secret:
+        secretName: access-token
+        items:
+        - key: 2-7-1_access-token
+          path: token
