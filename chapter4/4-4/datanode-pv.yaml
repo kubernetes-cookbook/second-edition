@@ -28,7 +28,7 @@ spec:
           image: uhopper/hadoop-datanode:2.7.2
           env:
             - name: CORE_CONF_fs_defaultFS
-              value: hdfs://hdfs-namenode-svc.default.svc.cluster.local:8020
+              value: hdfs://hdfs-namenode-0.hdfs-namenode-svc.default.svc.cluster.local:8020
           ports:
           - containerPort: 50010
           volumeMounts:
