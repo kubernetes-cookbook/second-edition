@@ -11,4 +11,4 @@ spec:
           hostPort: 80
     - name: centos
       image: centos
-      command: ["/bin/sh", "-c", "while : ;do curl http://localhost:8800/; sleep 30; done"]
+      command: ["/bin/sh", "-c", "while : ;do curl http://localhost:80/; sleep 30; done"]
