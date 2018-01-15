@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nfs
+spec:
+  containers:
+    -
+      name: nfs
+      image: ubuntu
+      volumeMounts:
+          - name: nfs
+            mountPath: /data-mount
+  volumes:
+    - name: nfs
+      nfs:
+        server: <your nfs server>
+        path: "/"

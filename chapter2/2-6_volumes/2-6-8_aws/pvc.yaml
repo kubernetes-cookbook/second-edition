@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: aws-example
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: example-ebs
+  resources:
+    requests:
+      storage: 5Gi

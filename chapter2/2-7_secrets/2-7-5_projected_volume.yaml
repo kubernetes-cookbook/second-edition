@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: projected-volume-example
+spec:
+  containers:
+  - name: container-tes
+    image: ubuntu
+    command: ["/bin/sh", "-c", "while : ;do cat /projected-volume/configmap && cat /projected-volume/token; sleep 10; done"]
+    volumeMounts:
+    - name: projected-volume
+      mountPath: "/projected-volume"
+  volumes:
+  - name: projected-volume
+    projected:
+      sources:
+      - secret:
+          name: access-token
+          items:
+            - key: 2-7-1_access-token
+              path: token
+      - configMap:
+          name: config-example
+          items:
+            - key: app.properties
+              path: configmap
