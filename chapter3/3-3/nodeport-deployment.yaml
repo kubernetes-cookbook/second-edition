@@ -10,8 +10,8 @@ spec:
         app: nginx 
     spec:
       containers:
-      - name: my-nginx
-        image: nginx
+        - name: my-nginx
+          image: nginx
 ---
 apiVersion: v1
 kind: Service
