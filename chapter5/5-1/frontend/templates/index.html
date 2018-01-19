@@ -1,0 +1,14 @@
+<html>
+   <body>
+   <div>
+         <form method="post" action="/add">
+           <input type="text" name="x" size="2"/>
+           <input type="text" name="y" size="2"/>
+           <input type="submit" value="addition"/>
+       </form>
+       {% if add_result %}
+       <p>Answer : {{ add_x }} + {{ add_y }} = {{ add_result }}</p>
+       {% endif %}
+   </div>
+   </body>
+</html>
