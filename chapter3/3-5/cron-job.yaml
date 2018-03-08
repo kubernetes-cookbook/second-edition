@@ -4,6 +4,7 @@ metadata:
   name: package-check
 spec:
   schedule: "*/5 * * * *"
+  concurrencyPolicy: "Forbid"
   jobTemplate:
     spec:
       template:
