@@ -1,9 +1,12 @@
 kind: Deployment
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 metadata:
   name: aws-ebs-deployment
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      run: nginx
   template:
     metadata:
       labels:
