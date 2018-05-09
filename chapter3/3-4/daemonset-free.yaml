@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ram-check
+spec:
+  selector:
+    matchLabels:
+      name: checkRam
+  template:
+    metadata:
+      labels:
+        name: checkRam
+    spec:
+      containers:
+      - name: ubuntu-free
+        image: ubuntu
+        command: ["/bin/bash","-c","while true; do free; sleep 30; done"]
+      restartPolicy: Always
